@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b12">
+<meta name="description" content="一个用 HTML5 Canvas 从零实现的经典横版跳跃游戏（马里奥风格）">
+<title>超级马里奥 · HTML5 Canvas 复刻</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ===== 游戏画面 ===== -->
+  <div id="stage">
+    <canvas id="screen" width="256" height="240"></canvas>
+
+    <!-- 触屏虚拟按键（检测到触摸设备时显示） -->
+    <div id="touchpad" class="hidden" aria-hidden="true">
+      <div class="pad-left">
+        <button class="tbtn" data-key="left"   aria-label="左">◀</button>
+        <button class="tbtn" data-key="down"   aria-label="下">▼</button>
+        <button class="tbtn" data-key="right"  aria-label="右">▶</button>
+      </div>
+      <div class="pad-right">
+        <button class="tbtn round" data-key="run"  aria-label="跑/火球">B</button>
+        <button class="tbtn round" data-key="jump" aria-label="跳">A</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 工具栏 ===== -->
+  <div id="toolbar">
+    <span class="brand">SUPER&nbsp;MARIO</span>
+    <span class="sep"></span>
+    <button class="tool" id="btnPause"  title="暂停 / 继续 (P)">⏸ 暂停</button>
+    <button class="tool" id="btnMute"   title="静音开关 (M)">🔊 声音</button>
+    <button class="tool" id="btnFull"   title="全屏 (F)">⛶ 全屏</button>
+    <button class="tool" id="btnReset"  title="重新开始 (R)">⟲ 重开</button>
+    <span class="sep"></span>
+    <span class="hint">← → 移动 &nbsp;·&nbsp; ↓ 蹲下 &nbsp;·&nbsp; Z/空格 跳跃 &nbsp;·&nbsp; X/Shift 加速·火球 &nbsp;·&nbsp; Enter 开始</span>
+  </div>
+
+</div>
+
+<!-- 载入顺序即依赖顺序，请勿调整 -->
+<script src="js/audio.js"></script>
+<script src="js/sprites.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
